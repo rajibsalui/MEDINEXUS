@@ -29,7 +29,7 @@ const Navbar = ({setShowLogin,loggedIn}) => {
 
   return (
     <div className='navbar'>
-      <Link to='/'><img src={assets.logo} alt="" className="logo" /></Link>
+      <Link to='/'><img src={assets.Preview} alt="" className="logo" /></Link>
       {/* <ul className="navbar-user">
           <Link to='/' onClick={()=>setUser("home")} className={user==="home"?"active":""}>Home</Link>
           <Link to='/user' onClick={()=>navigate('/user')} className={user==="user"?"active":""}>user</Link>
@@ -37,7 +37,7 @@ const Navbar = ({setShowLogin,loggedIn}) => {
           <a href='#footer' onClick={()=>setUser("contact-us")} className={user==="contact-us"?"active":""}>contact us</a>
       </ul> */}
         <div className="navbar-right">
-          {/* <img src={assets.search_icon} alt="" /> */}
+          {/* { <img src={assets.search_icon} alt="" /> } */}
           
         {!token ? <>
           <button className="emergency">Emergency</button>
