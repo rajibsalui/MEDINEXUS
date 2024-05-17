@@ -8,10 +8,15 @@ const Adddoctors = () => {const url = "http://localhost:4000";
     const { getTotalCartAmount, food_list } = useContext(StoreContext)
     const [image, setImage] = useState(false);
     const [data, setData] = useState({
-        name: "",
-        description: "",
-        price: "",
-        category:"Salad"
+                userId:"",
+                name: "",
+                email: "",
+                password: "",
+                description: "",
+                charges: "",
+                specialization:"",
+                degree: "",
+                datesavailable: ""
     })
 
 
