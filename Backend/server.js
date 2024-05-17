@@ -6,6 +6,8 @@ import 'dotenv/config.js'
 import hospitalRoute from "./routes/hospitalRoute.js"
 import medicroutes from "./routes/medicRoutes.js"
 import hospitaldoctorRoute from "./routes/hospitaldoctorRoute.js"
+import cartRouter from "./routes/cartRoute.js"
+import orderRouter from "./routes/orderRoute.js"
 
 
 
@@ -26,7 +28,10 @@ app.use("/api/user", userRouter)
 app.use("/api/hospital_doctor", hospitaldoctorRoute)
 app.use("/api/medicine", medicroutes)
 app.use("/api/hospital", hospitalRoute)
-app.use("/images",express.static('uploads'))
+app.use("/images", express.static('uploads'))
+
+app.use("/api/cart",cartRouter)
+app.use("/api/order",orderRouter)
 
 
 app.get("/",(req,res)=>{

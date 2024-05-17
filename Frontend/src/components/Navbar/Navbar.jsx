@@ -9,7 +9,7 @@ const Navbar = ({setShowLogin,loggedIn}) => {
 
   const [user, setUser] = useState("home");
     
-    const { token, setToken } = useContext(StoreContext);
+    const { token, setToken,getTotalCartAmount } = useContext(StoreContext);
 
   const navigate = useNavigate();
   const logout = () => {
@@ -38,10 +38,7 @@ const Navbar = ({setShowLogin,loggedIn}) => {
       </ul> */}
         <div className="navbar-right">
           {/* <img src={assets.search_icon} alt="" /> */}
-          {/* <div className="navbar-search-icon">
-               <Link to='/cart'><img src = {assets.basket_icon } alt="" /></Link>
-               <div className={getTotalCartAmount()===0?"":"dot"}></div>
-        </div> */}
+          
         {!token ? <>
           <button className="emergency">Emergency</button>
           <button onClick={() => setShowLogin(true)}>Sign in</button> 
@@ -50,10 +47,14 @@ const Navbar = ({setShowLogin,loggedIn}) => {
 
           <ul className="navbar-user">
           <Link to='/' onClick={()=>setUser("home")} className={user==="home"?"active":""}>Home</Link>
-          <Link to='/user' onClick={()=>navigate('/user')} className={user==="user"?"active":""}>user</Link>
+          <Link to='/medicinelist' onClick={()=>navigate('/user')} className={user==="user"?"active":""}>Medicine List</Link>
           <a href='#app-download' onClick={()=>setUser("mobile-app")} className={user==="mobile-app"?"active":""}>mobile-app</a>
           <a href='#footer' onClick={()=>setUser("contact-us")} className={user==="contact-us"?"active":""}>contact us</a>
-          </ul>
+            </ul>
+            <div className="navbar-search-icon">
+               <Link to='/cart'><img src = {assets.basket_icon } alt="" /></Link>
+               <div className={getTotalCartAmount()===0?"":"dot"}></div>
+        </div>
           <div className='navbar-profile'>
             <img src={assets.profile_icon} alt='' />
             <ul className='nav-profile-dropdown'>
