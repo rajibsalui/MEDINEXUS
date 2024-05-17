@@ -94,7 +94,7 @@ const Navbar = ({setShowHospitalLogin,loggedIn}) => {
               }
             
             <ul className='nav-profile-dropdown'>
-              <li onClick={()=>navigate('/myorders')}><img src={assets.bag_icon} alt=''/><p>Order</p></li>
+              <li onClick={()=>navigate('/orders')}><img src={assets.bag_icon} alt=''/><p>Order</p></li>
               <hr/>
               <li onClick={logout}><img src={assets.logout_icon} alt=''/><p>Logout</p></li>
             </ul>
