@@ -58,9 +58,11 @@
   .navbar-search-icon{
      position: relative;
   }
+  .navbar-search-icon img{
+     position: absolute;
+     top: -2px;
+     width: 30px;
 
-  .navbar-search-icon{
-    position: relative;
   }
   .navbar-search-icon .dot{
     position: absolute;
@@ -68,8 +70,8 @@
     min-height: 10px;
     background-color: tomato;
     border-radius: 5px;
-    top: -8px;
-    right: -8px;
+    top: -7px;
+    right: 2px;
   } 
 .navbar-right .emergency{
    background-color: rgb(255, 255, 255);
