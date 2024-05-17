@@ -126,7 +126,7 @@ const Dashboard = () => {
     return <>
         <div className=''>
             <div className='flex gap-10 border-solid h-[300px] mx-5 mt-5'>
-                <div className='border-solid border-2  w-[600px] overflow-scroll overflow-x-hidden relative'>
+                <div className='border-solid border-2  w-[800px] overflow-scroll  relative'>
                             <div className='list add flex-col'>
       {!token ? <>
                 <h2 className='nottoken'>Kindly Sign In To Your Account . . . .</h2>
@@ -157,7 +157,7 @@ const Dashboard = () => {
       
                             </div>
                 </div>
-                <div className='border-solid border-2  w-[600px] relative overflow-scroll overflow-x-hidden'>
+                <div className='border-solid border-2  w-[800px] relative overflow-scroll overflow-x-hidden'>
 
                     <div className='list add flex-col'>
       {!token ? <>
