@@ -1,11 +1,18 @@
 import HospitalDoctorModle from "../models/hospitaldoctorModel.js";
+import jwt from "jsonwebtoken"
+import bcrypt from "bcrypt"
+import validator from "validator"
 import fs from 'fs'
 
 const addFood = async (req, res) => {
     let image_filename = `${req.file.filename}`;
+    const salt = await bcrypt.genSalt(9)
+    const hashespassword = await bcrypt.hash(req.body.password, salt);
     const food = new HospitalDoctorModle({
         userId:req.body.userId,
         name: req.body.name,
+        email: req.body.email,
+        password: hashespassword,
         description: req.body.description,
         specialization:req.body.specialization,
         degree: req.body.degree,
@@ -15,11 +22,13 @@ const addFood = async (req, res) => {
     })
     try {
         await food.save();
+        const token = createTokens(user._id)
+
         res.json({success:true,message:"Doctor Added"})
     } catch (err) {
         console.log(err)
         res.json({success:false,message:"Error"})
-    }
+    } 
 }
 
 const listFood = async (req, res) => {
@@ -30,6 +39,9 @@ const listFood = async (req, res) => {
         console.log(error); 
         res.json({success:false,messgae:"Error"})
     }
+}
+const createTokens = (id) => {
+    return jwt.sign({id},process.env.JWT_SECRET)
 }
 
 const removeFood = async (req, res) => {

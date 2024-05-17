@@ -2,7 +2,9 @@ import mongoose from "mongoose";
 
 const HospitalDoctorSchema = new mongoose.Schema({
     userId:{type:String,required:true},
-    name:{type:String,require:true},
+    name: { type: String, require: true },
+    email: { type: String, require: true, unique: true },
+    password: { type: String, require: true },
     description:{type:String,require:true},
     specialization:{type:String,require:true},
     degree: { type: String, require: true },
