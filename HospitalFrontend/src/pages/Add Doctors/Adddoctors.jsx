@@ -64,6 +64,8 @@ const Adddoctors = () => {const url = "http://localhost:4000";
         event.preventDefault();
         const formData = new FormData();
         formData.append("name", data.name)
+        formData.append("email", data.email)
+        formData.append("password", data.password)
         formData.append("specialization", data.specialization)
         formData.append("userId",email)
         formData.append("description",data.description)
@@ -76,6 +78,8 @@ const Adddoctors = () => {const url = "http://localhost:4000";
             setData({
                 userId:"",
                 name: "",
+                email: "",
+                password: "",
                 description: "",
                 charges: "",
                 specialization:"",
@@ -83,10 +87,8 @@ const Adddoctors = () => {const url = "http://localhost:4000";
                 datesavailable: ""
             })
             setImage(false)
-            toast.success(response.data.message)
         }
         else {
-            toast.error(response.data.message)
         }
 }
 
@@ -116,11 +118,22 @@ const Adddoctors = () => {const url = "http://localhost:4000";
                   <p>Doctor's Degree:</p>
                   <input onChange={onChangaeHAndler} value={data.degree} type='text' name='degree' placeholder='Type here'/>
               </div>
-          </div>
-              <div className='add-product-description flex-col'>
+                  </div>
+                  <div className='add-category-price'>
+                      
+                <div className='add-product-description flex-col'>
                   <p>Doctor's description</p>
                   <textarea onChange={onChangaeHAndler} value={data.description} name='description' rows="6" placeholder='Write Content here'></textarea>
-              </div>
+                  </div>
+                  <div className='add-product-name flex-col'>
+                  <p>Doctor's Email</p>
+                  <input onChange={onChangaeHAndler} value={data.email} type='text' name='email' placeholder='Type here'/>
+                  </div>
+                  <div className='add-product-name flex-col'>
+                  <p>Doctor's Password</p>
+                  <input onChange={onChangaeHAndler} value={data.password} type='password' name='password' placeholder='Type here'/>
+                  </div>
+                  </div>
           <div className='add-category-price'>
             <div className='add-category flex-col'>
                       <p>Doctor Dates Available</p>
